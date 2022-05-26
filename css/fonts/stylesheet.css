@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Holtzman Textured';
+    src: url('Holtzman-Textured.eot');
+    src: url('Holtzman-Textured.eot?#iefix') format('embedded-opentype'),
+        url('Holtzman-Textured.woff2') format('woff2'),
+        url('Holtzman-Textured.woff') format('woff'),
+        url('Holtzman-Textured.svg#Holtzman-Textured') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

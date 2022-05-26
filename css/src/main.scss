@@ -1,0 +1,285 @@
+
+
+// color variables
+$red: #BE2126;
+
+$orange: #EB612C;
+$teal: #0F8EA3;
+$lime: #95BE48;
+$forest: #447F59;
+
+$grey: #434A54;
+$grey-light: lighten( $grey, 40% );
+
+@import "reset";
+
+@import "fonts";
+
+@import "mixins";
+
+@import "base";
+
+@import "grid";
+
+
+body {
+	background: lighten( $grey-light, 25% );
+}
+
+
+// colors
+.bg-teal { background: $teal; }
+.bg-lime { background: $lime; }
+.bg-forest { background: $forest; }
+.bg-red { background: $red; }
+.bg-grey { background: $grey; }
+.bg-grey-light { background: rgba( $grey-light, .2 ); }
+
+.text-teal { color: $teal; }
+.text-lime { color: $lime; }
+.text-forest { color: $forest; }
+.text-red { color: $red; }
+.text-grey { color: $grey; }
+.text-grey-light { color: $grey-light; }
+
+
+.bg-woodgrain {
+	background: url(../img/bg-woodgrain.png) center center no-repeat;
+	background-size: cover;
+}
+.bg-waves {
+	background: url(../img/bg-waves.png) center center no-repeat;
+	background-size: cover;
+}
+.bg-topography {
+	background: url(../img/bg-topography.png) center center no-repeat;
+	background-size: cover;
+}
+
+
+// background-container
+.container {
+	box-shadow: 0 0 30px $grey-light;
+	background: white;
+}
+
+
+// wrap div
+.wrap {
+	max-width: 1100px;
+	margin: 0 auto;
+	position: relative;
+	@include clearfix;
+}
+
+
+header {
+	padding: 20px;
+	text-align: center;
+}
+
+
+.masthead {
+	img {
+		display: block;
+	}
+}
+
+
+.border {
+	position: relative;
+
+	&:before {
+		position: absolute;
+		display: block;
+		z-index: 10;
+		top: -20px;
+		left: 0;
+		right: 0;
+		height: 45px;
+		width: 100%;
+		content: '';
+	}
+
+	&.orange:before {
+		background: url(../img/border-orange.png) center center no-repeat;
+	}
+
+	&.grey:before {
+		background: url(../img/border-grey.png) center center no-repeat;
+	}
+
+	&.teal:before {
+		background: url(../img/border-teal.png) center center no-repeat;
+	}
+
+	&.lime:before {
+		background: url(../img/border-lime.png) center center no-repeat;
+	}
+
+	&.forest:before {
+		background: url(../img/border-forest.png) center center no-repeat;
+	}
+}
+
+
+// tool styles
+.content {
+	padding: 20px;
+
+	@include respond-to( 768px ) {
+		padding: 30px;
+	}
+
+	@include respond-to( 1024px ) {
+		padding: 50px;
+	}
+
+	h2 {
+		text-transform: uppercase;
+		font-size: 2.8em;
+		line-height: 1.4em;
+
+		span {
+			color: $orange;
+		}
+	}
+
+	h3 {
+		text-transform: uppercase;
+		font-size: 1.5em;
+		line-height: 1.1em;
+		padding: 0;
+	}
+
+	h5 {
+		color: $orange;
+		@include font-bold-italic;
+		margin-bottom: -20px;
+		padding: 10px 0 0 0;
+	}
+
+	ul {
+		list-style-type: disc;
+		padding: 5px 0 5px 25px;
+
+		li {
+			padding: 5px 0;
+		}
+	}
+}
+
+
+.icon-columns {
+	@include respond-to( 768px ) {
+		display: flex;
+		margin-left: -30px;
+		margin-top: 10px;
+		margin-bottom: 30px;
+	}
+
+	.column {
+		text-align: center;
+		margin-bottom: 20px;
+
+		@include respond-to( 768px ) {
+			flex: 1;
+			margin-left: 30px;
+			margin-bottom: 0;
+		}
+
+		h4 {
+			text-transform: uppercase;
+			font-size: 1em;
+			padding: 10px 0 0;
+		}
+
+		h3 {
+			text-transform: uppercase;
+			font-size: 2.4em;
+			line-height: 1em;
+			padding: 0 0 10px;
+			color: $orange;
+
+			span {
+				display: block;
+			}
+		}
+
+		p {
+			font-size: .85em;
+			line-height: 1.45em;
+		}
+	}
+}
+
+
+.boxes {
+	@include respond-to( 768px ) {
+		display: flex;
+		flex-wrap: wrap;
+
+		.box {
+			flex: 1;
+			flex-basis: 50%;
+		}
+	}
+
+	@include respond-to( 1024px ) {
+		flex-wrap: nowrap;
+
+		.box {
+			flex: 1;
+		}
+	}
+}
+
+
+.footer-bar {
+	padding: 20px;
+	background: $orange;
+	color: white;
+
+	a {
+		color: white;
+	}
+
+	.footer-content {
+		padding: 20px;
+
+		@include respond-to( 768px ) {
+			padding: 30px;
+		}
+	}
+
+	.footer-columns {
+		font-size: .75em;
+		vertical-align: baseline;
+
+		@include respond-to( 768px ) {
+			display: flex;
+
+			.footer-column {
+				flex: 1;
+
+				&:first-child {
+					padding-top: 20px;
+					text-align: left;
+				}
+
+				&:nth-child(2) {
+					text-align: right;
+				}
+			}
+		}
+	}
+}
+
+
+.disclosure {
+	padding: 20px;
+	font-size: .75em;
+	line-height: 1.5em;
+	background: #eee;
+	color: #777;
+}
